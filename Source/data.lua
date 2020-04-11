@@ -28,6 +28,7 @@ data:extend({
   {
     type = "recipe",
     name = "long-range-radar",
+    enabled = false,
     ingredients =
     {
       {"advanced-circuit", 5},
