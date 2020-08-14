@@ -1,10 +1,10 @@
 {
   "name": "leighzerlongrangeradar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "title": "Leighzer's Long Range Radar",
   "author": "Leighzer",
   "contact": "Please message me on the factorio forums my username is leighzer.",  
-  "factorio_version": "0.18",
-  "dependencies": [ "base >= 0.18.13"],
+  "factorio_version": "1.0",
+  "dependencies": [ "base >= 1.0.0"],
   "description": "Small mod that adds a new advanced radar with a larger scan radius, but smaller nearby vision radius."
 }
