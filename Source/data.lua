@@ -4,6 +4,9 @@ end
 
 if not leighzermods.leighzerlongrangeradar then
   leighzermods.leighzerlongrangeradar = {}
+
+  leighzermods.leighzerlongrangeradar.energyUsagekW = settings.startup["energyUsagekW"].value
+  leighzermods.leighzerlongrangeradar.maxDistanceOfSectorRevealed = settings.startup["maxDistanceOfSectorRevealed"].value
 end
 
 local hit_effects = require ("__base__.prototypes.entity.demo-hit-effects")
@@ -46,7 +49,7 @@ data:extend({
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.1, result = "long-range-radar"},
     max_health = 500, -- 250,
-    corpse = "medium-remnants",--"radar-remnants",
+    corpse = "medium-remnants", -- "radar-remnants",
     dying_explosion = "radar-explosion",
     resistances =
     {
@@ -62,16 +65,16 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
-    energy_per_sector = "25MJ",
-    max_distance_of_sector_revealed = 28,
-    max_distance_of_nearby_sector_revealed = 1,
-    energy_per_nearby_scan = "1J",
+    energy_per_sector = "25MJ", -- "10MJ",
+    max_distance_of_sector_revealed = leighzermods.leighzerlongrangeradar.maxDistanceOfSectorRevealed, -- 28, -- 14,
+    max_distance_of_nearby_sector_revealed = 1, -- 3,
+    energy_per_nearby_scan = leighzermods.leighzerlongrangeradar.energyUsagekW .. "kJ", -- "250kJ",
     energy_source =
     {
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "1MW",
+    energy_usage = leighzermods.leighzerlongrangeradar.energyUsagekW .. "kW", -- "1MW", -- "300kW",
     integration_patch =
     {
       filename = "__base__/graphics/entity/radar/radar-integration.png",
@@ -154,7 +157,8 @@ data:extend({
         }
       },
     max_sounds_per_type = 3,
-    audible_distance_modifier = 0.8,
+    --audible_distance_modifier = 0.8,
+    use_doppler_shift = false
     },
     radius_minimap_visualisation_color = { r = 0.059, g = 0.092, b = 0.235, a = 0.275 },
     rotation_speed = 0.01 / 2, -- 0.01,
