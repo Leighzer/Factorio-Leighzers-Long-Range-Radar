@@ -9,8 +9,8 @@ if not leighzermods.leighzerlongrangeradar then
   leighzermods.leighzerlongrangeradar.maxDistanceOfSectorRevealed = settings.startup["maxDistanceOfSectorRevealed"].value
 end
 
-local hit_effects = require ("__base__.prototypes.entity.demo-hit-effects")
-local sounds = require("__base__.prototypes.entity.demo-sounds")
+local hit_effects = require ("__base__.prototypes.entity.hit-effects")
+local sounds = require("__base__.prototypes.entity.sounds")
 
 --add item
 --add recipe

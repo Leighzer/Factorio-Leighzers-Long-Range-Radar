@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+  Changes:
+    - Bump version to 1.1.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.3
   Changes:
     - Added options to set power consumption and max_distance_of_sector_revealed for the radar.
